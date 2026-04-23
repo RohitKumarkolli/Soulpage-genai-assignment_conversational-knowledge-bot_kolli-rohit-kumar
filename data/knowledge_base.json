@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "name": "KnowledgeBot Custom Knowledge Base",
+    "version": "1.0",
+    "description": "Local facts the bot knows without searching the web. Add your own entries here.",
+    "last_updated": "2024-01-01"
+  },
+  "entries": [
+    {
+      "id": "kb_001",
+      "topic": "KnowledgeBot",
+      "keywords": ["knowledgebot", "this bot", "you", "your capabilities", "what can you do"],
+      "content": "KnowledgeBot is a conversational AI assistant built with LangChain, Groq (LLaMA 3.1), DuckDuckGo, Wikipedia, and Streamlit. It remembers conversations, searches the web in real time, and can answer from a custom knowledge base. It was built as a production-level learning project across 9 milestones.",
+      "category": "project"
+    },
+    {
+      "id": "kb_002",
+      "topic": "Tech Stack",
+      "keywords": ["tech stack", "technologies", "built with", "framework", "tools used"],
+      "content": "KnowledgeBot uses: Python 3.10+, LangChain 0.3.x for orchestration, Groq with LLaMA 3.1-8b-instant for LLM inference, DuckDuckGo for web search, Wikipedia API for encyclopedic lookups, Streamlit for the chat UI, and python-dotenv for environment management.",
+      "category": "project"
+    },
+    {
+      "id": "kb_003",
+      "topic": "LangChain",
+      "keywords": ["langchain", "what is langchain", "langchain framework"],
+      "content": "LangChain is an open-source framework for building applications powered by large language models. It provides abstractions for chains, agents, memory, tools, and retrievers. Key components: ChatPromptTemplate for prompt management, AgentExecutor for tool-calling loops, RunnableWithMessageHistory for memory, and LCEL (LangChain Expression Language) for composing pipelines with the | operator.",
+      "category": "technology"
+    },
+    {
+      "id": "kb_004",
+      "topic": "Groq",
+      "keywords": ["groq", "what is groq", "groq api", "groq llm"],
+      "content": "Groq is an AI infrastructure company that provides ultra-fast LLM inference using its custom Language Processing Unit (LPU) chip. It offers a free tier API supporting models like LLaMA 3.1, Mixtral, and Gemma. Groq is known for producing responses 10-20x faster than GPU-based inference. API keys are free at console.groq.com.",
+      "category": "technology"
+    },
+    {
+      "id": "kb_005",
+      "topic": "ReAct Agent Pattern",
+      "keywords": ["react", "agent", "reasoning", "tool calling", "how does the agent work"],
+      "content": "The ReAct (Reason + Act) pattern is how KnowledgeBot's agent works. For each user query: (1) The LLM REASONS about what information it needs. (2) It ACTS by calling a tool (web_search or wikipedia). (3) It OBSERVES the tool output. (4) It repeats until it has enough to answer, then returns a final response. This loop is managed by AgentExecutor with a max of 5 iterations.",
+      "category": "technology"
+    },
+    {
+      "id": "kb_006",
+      "topic": "Memory Types",
+      "keywords": ["memory", "conversation memory", "how memory works", "buffer memory", "summary memory"],
+      "content": "KnowledgeBot supports two memory types: (1) ConversationBufferMemory — stores every message verbatim. Simple but grows unboundedly. Best for short sessions. (2) ConversationSummaryMemory — uses the LLM to summarise older turns while keeping recent ones in full. Prevents context overflow. Best for long sessions. Both use session_id for isolation between different users or browser tabs.",
+      "category": "technology"
+    },
+    {
+      "id": "kb_007",
+      "topic": "Python Virtual Environment",
+      "keywords": ["venv", "virtual environment", "python setup", "pip install"],
+      "content": "To set up the project: (1) python -m venv venv. (2) Activate: venv\\Scripts\\activate (Windows) or source venv/bin/activate (Mac/Linux). (3) pip install -r requirements.txt. (4) Copy .env.example to .env and add your GROQ_API_KEY. (5) Run: streamlit run run.py from the project root.",
+      "category": "setup"
+    },
+    {
+      "id": "kb_008",
+      "topic": "Streamlit Session State",
+      "keywords": ["streamlit", "session state", "how streamlit works", "rerun"],
+      "content": "Streamlit reruns the entire script from top to bottom on every user interaction. session_state is the persistence layer that survives reruns. KnowledgeBot stores messages and query counts in session_state for the UI, and uses a separate LangChain ChatMessageHistory for the LLM context. @st.cache_resource caches the agent object so it is built only once.",
+      "category": "technology"
+    },
+    {
+      "id": "kb_009",
+      "topic": "Free APIs Used",
+      "keywords": ["free", "api key", "cost", "pricing", "free tier"],
+      "content": "KnowledgeBot uses only free APIs: (1) Groq — free tier with ~14,400 tokens/minute. No credit card needed. (2) DuckDuckGo Search — completely free, no API key required. (3) Wikipedia API — completely free, no API key required. The only required key is GROQ_API_KEY, available free at console.groq.com.",
+      "category": "project"
+    },
+    {
+      "id": "kb_010",
+      "topic": "Milestones",
+      "keywords": ["milestones", "how was this built", "project structure", "learning path"],
+      "content": "KnowledgeBot was built across 9 milestones: M1 (Project Setup + LLM test), M2 (Stateless CLI chatbot), M3 (Memory-enabled chatbot), M4 (Tool-enabled agent), M5 (Memory + Tools combined), M6 (Streamlit UI), M7 (Modular refactor), M8 (README + GitHub), M9 (Summary memory + Knowledge base + Prompt engineering).",
+      "category": "project"
+    },
+    {
+      "id": "kb_011",
+      "topic": "Your Topic",
+      "keywords": ["keyword1", "keyword2", "phrase that triggers this"],
+      "content": "The full answer the bot should give when asked about this topic.",
+      "category": "custom"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[theme]
+# ── Dark theme matching our custom CSS ─────────────────────────────────────────
+base              = "dark"
+backgroundColor   = "#0f1117"
+secondaryBackgroundColor = "#1a1f2e"
+primaryColor      = "#4fc3f7"
+textColor         = "#e2e8f0"
+font              = "sans serif"
+
+[server]
+# ── Server settings ────────────────────────────────────────────────────────────
+headless          = true       # required for cloud deployment
+enableCORS        = false      # Streamlit Cloud handles CORS
+enableXsrfProtection = true
+
+[browser]
+# ── Browser settings ───────────────────────────────────────────────────────────
+gatherUsageStats  = false      # disable telemetry
+
+[runner]
+# ── Runner settings ────────────────────────────────────────────────────────────
+magicEnabled      = false      # disable magic commands for cleaner execution
