@@ -1,4 +1,4 @@
-# 🤖 KnowledgeBot — Conversational AI with Memory & Tools
+# Conversational KnowledgeBot —  AI with Memory & Tools
 
 > A production-grade conversational chatbot built with LangChain, Groq (LLaMA 3.1),
 > DuckDuckGo, Wikipedia, and Streamlit. It remembers your conversation, searches
@@ -49,39 +49,7 @@
 
 ### High-Level Flow
 
-```
-User types a message
-        │
-        ▼
-  Streamlit UI (ui/chat.py)
-        │
-        ▼
-  invoke_agent()  ──────────────────────────────────────────────┐
-        │                                                        │
-        ▼                                                        │
-  RunnableWithMessageHistory                                     │
-  (memory wrapper)                                              │
-        │                                                        │
-        ├── BEFORE: load chat_history from SessionMemoryStore   │
-        │                                                        │
-        ▼                                                        │
-  AgentExecutor  (Reason → Act → Observe loop)                  │
-        │                                                        │
-        ├── LLM reads: system + chat_history + user input       │
-        │                                                        │
-        ├── LLM decides: need a tool?                           │
-        │       ├── YES → call tool → append to scratchpad      │
-        │       │         → loop back to LLM                    │
-        │       └── NO  → return final answer                   │
-        │                                                        │
-        ├── AFTER: save HumanMessage + AIMessage to memory      │
-        │                                                        │
-        ▼                                                        │
-  result["output"]  ────────────────────────────────────────────┘
-        │
-        ▼
-  Streamlit renders response bubble + source badge
-```
+![alt text](image.png)
 
 ### Two Memory Systems Working Together
 
