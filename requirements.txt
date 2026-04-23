@@ -3,34 +3,21 @@
 # ============================================================
 
 # --- Core LangChain ---
-langchain==0.3.25                  # Main LangChain framework
-langchain-core==0.3.59            # Core abstractions (Runnables, prompts)
-langchain-community==0.3.24        # Community integrations (tools, memory, etc.)
-langchain-groq==0.3.2              # Groq LLM integration for LangChain
+langchain>=0.3.0,<0.4.0
+langchain-core>=0.3.0,<0.4.0
+langchain-community>=0.3.0,<0.4.0
+langchain-groq>=0.2.0,<0.4.0
 
 # --- LLM Provider ---
-groq==0.23.1                       # Groq SDK (fast free LLM inference)
+groq>=0.9.0
 
 # --- Tools & Search ---
-duckduckgo-search==8.0.1           # DuckDuckGo search (no API key needed)
-wikipedia==1.4.0                   # Wikipedia API wrapper
+duckduckgo-search>=6.0.0
+wikipedia==1.4.0
 
 # --- UI ---
-streamlit==1.45.0                  # Web chat interface (Milestone 6)
+streamlit>=1.40.0
 
 # --- Utilities ---
-python-dotenv==1.1.0               # Load .env API keys securely
-pydantic==2.11.4                   # Data validation (used by LangChain internally)
-
-# --- Optional: Better terminal output ---
-rich==14.0.0                       # Beautiful CLI formatting
-
-# ── Observability (optional) ──
-langsmith==0.3.42
- 
-# ── Dev / Testing ──
-pytest==8.3.5
-pytest-asyncio==0.26.0
-
-# ── Logging ──
-loguru==0.7.3
+python-dotenv>=1.0.0
+pydantic>=2.0.0,<3.0.0
