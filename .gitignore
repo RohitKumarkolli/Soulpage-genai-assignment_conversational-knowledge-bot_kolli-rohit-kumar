@@ -1,5 +1,5 @@
 # ======================
-# Environment & Secrets
+# Secrets — NEVER commit
 # ======================
 .env
 .env.*
@@ -35,7 +35,7 @@ ENV/
 *.swo
 
 # ======================
-# OS Files
+# OS
 # ======================
 .DS_Store
 Thumbs.db
@@ -47,4 +47,3 @@ Thumbs.db
 logs/
 *.db
 chroma_db/
-
