@@ -15,10 +15,18 @@ import streamlit as st
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables.history import RunnableWithMessageHistory
-from langchain.agents import create_tool_calling_agent, AgentExecutor
+try:
+    from langchain.agents import create_tool_calling_agent, AgentExecutor
+except ImportError:
+    from langchain_core.agents import create_tool_calling_agent
+    from langchain.agents import AgentExecutor
 
 from ..config  import LLM_CONFIG, MEMORY_CONFIG
-from ..memory  import memory_store, SummaryMemoryManager
+
+try:
+    from ..memory  import memory_store, SummaryMemoryManager
+except ImportError:
+    None
 from ..tools   import build_all_tools
 
 
