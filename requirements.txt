@@ -1,27 +1,44 @@
+# # ============================================================
+# # KnowledgeBot — Dependencies
+# # Tested on Python 3.11 (pin via runtime.txt)
+# # ============================================================
+
+# # --- Core LangChain ---
+# langchain==0.3.25
+# langchain-core==0.3.58
+# langchain-community==0.3.24
+# langchain-groq==0.3.2
+
+# # --- LLM Provider ---
+# groq==0.23.1
+
+# # --- Tools & Search ---
+# duckduckgo-search==6.3.7
+# wikipedia==1.4.0
+
+# # --- UI ---
+# streamlit==1.45.0
+
+# # --- Utilities ---
+# python-dotenv==1.1.0
+
+# # --- Explicit transitive pins (prevents resolver conflicts on cloud) ---
+# httpx>=0.24.0
+# anyio>=3.7.0
+
 # ============================================================
-# KnowledgeBot — Dependencies
-# Tested on Python 3.11 (pin via runtime.txt)
+# KnowledgeBot — Streamlit Cloud Dependencies
+# Python 3.11 (pinned via runtime.txt)
+#
+# NO strict version pins — pip resolves compatible versions.
+# Strict pins caused langchain-core conflicts between packages.
 # ============================================================
 
-# --- Core LangChain ---
-langchain==0.3.25
-langchain-core==0.3.58
-langchain-community==0.3.24
-langchain-groq==0.3.2
-
-# --- LLM Provider ---
-groq==0.23.1
-
-# --- Tools & Search ---
-duckduckgo-search==6.3.7
-wikipedia==1.4.0
-
-# --- UI ---
-streamlit==1.45.0
-
-# --- Utilities ---
-python-dotenv==1.1.0
-
-# --- Explicit transitive pins (prevents resolver conflicts on cloud) ---
-httpx>=0.24.0
-anyio>=3.7.0
+langchain
+langchain-core
+langchain-community
+langchain-groq
+groq
+duckduckgo-search
+wikipedia
+python-dotenv
