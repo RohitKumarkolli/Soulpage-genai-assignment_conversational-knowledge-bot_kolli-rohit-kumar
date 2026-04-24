@@ -33,12 +33,17 @@
 # NO strict version pins — pip resolves compatible versions.
 # Strict pins caused langchain-core conflicts between packages.
 # ============================================================
+# ============================================================
+# KnowledgeBot — Streamlit Cloud Dependencies
+# Compatible with Python 3.14 + latest LangChain
+# ============================================================
 
-langchain
-langchain-core
-langchain-community
-langchain-groq
-groq
-duckduckgo-search
-wikipedia
-python-dotenv
+langchain==0.3.25
+langchain-core==0.3.59
+langchain-community==0.3.24
+langchain-groq==0.3.2
+groq==0.23.1
+duckduckgo-search==6.3.7
+wikipedia==1.4.0
+python-dotenv==1.1.0
+pydantic==2.11.4
